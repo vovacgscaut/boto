@@ -1,40 +1,32 @@
-HELP="""
-help - напечатать справку по программе.
-add - добавить задачу в список(название задачи запрашиваем у пользователя).
-show - напечатать все добавленные задачи.
 
-exit -выход из программы. """
-today=[]
-tomorrow=[]
-other=[]
-run=True
-while run:        #нужно сделать отступ для всего тела цикла
-        command=input("Введите команду:")
-        if command=="help":
-            print(HELP)
-        elif command=="show":
-            print("Сегодня")
-            print(today)
-            print("Завтра")
-            print(tomorrow)
-            print("Другие")
-            print(other)
-        elif command=="add":
-            date=input("Введите дату:")
-            task=input("Ведите название задачи")
-            if date=="Сегодня":
-                today.append(task)
-                print(f"Задача {task} добавлена")
-            elif date=="Завтра":
-                tomorrow.append(task)
-                print(f"Задача {task} добавлена")
-            elif date=="Другая":
-                other.append(task)
-                print(f"Задача {task} добавлена")
-        elif command=="exit":
-            print("Спасибо за внимание,досвидания")
-            break
-        else:
-            print("Неизвестная команда")
-            run=False
-            print("Good bye")
+
+import re
+print(re)
+words="cet,cross,cat,combo,acces,net"
+res=len(words)
+print(res)
+
+
+
+start = -1
+count = 0
+buk=input("введите букву:" )
+while True:
+    start = words.find(buk, start+1)
+    if start == -1:
+        break
+    count += 1
+
+print("Количество вхождений символа в строку: ", count )
+buk=input("введите букву:" )
+print(buk)
+while True:
+    word_list = re.findall(r'\b\w+\b', words)
+    rse_word=len(word_list)
+    print("Количество слов в строке:", rse_word)
+    print(word_list)
+        #     if buk==True:
+        # print(word_list)
+
+    input('press any key for exit')
+    break
